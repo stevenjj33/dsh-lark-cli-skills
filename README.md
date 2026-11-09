@@ -1,4 +1,14 @@
+<p align="center">
+  <img src="./assets/icon-512.png" alt="dsh-lark-cli-skills icon" width="128" height="128">
+</p>
+
 # dsh-lark-cli-skills
+
+[![npm](https://img.shields.io/npm/v/dsh-lark-cli-skills)](https://www.npmjs.com/package/dsh-lark-cli-skills)
+[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![dsh plugin](https://img.shields.io/badge/dsh-plugin-8A2BE2)](https://github.com/topics/dsh-plugin)
+
+> A **DeepSeek Harness plugin** that brings the [Lark/Feishu CLI](https://github.com/larksuite/cli) agent skills into your DSH agent's catalog.
 
 [Agent skills](https://github.com/larksuite/cli) for the Lark/Feishu CLI, packaged as a **DeepSeek Harness** plugin bundle.
 

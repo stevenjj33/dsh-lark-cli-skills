@@ -1,6 +1,6 @@
 {
   "name": "dsh-lark-cli-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Agent skills for the Lark/Feishu CLI (lark-cli), packaged as a DeepSeek Harness plugin bundle. Provides 27 lark-cli skills (docs, sheets, base, calendar, drive, task, wiki, approval, mail, slides, vc and more) to the DSH agent. Intentionally excludes lark-im so it complements — rather than duplicates — an existing IM bridge plugin.",
   "type": "module",
   "main": "lib/index.js",
@@ -11,6 +11,7 @@
   "files": [
     "lib",
     "skills",
+    "assets",
     "cordis.patch.yml",
     "skills.manifest.json",
     "README.md",
@@ -53,5 +54,6 @@
   "homepage": "https://github.com/stevenjj33/dsh-lark-cli-skills#readme",
   "bugs": {
     "url": "https://github.com/stevenjj33/dsh-lark-cli-skills/issues"
-  }
+  },
+  "icon": "assets/icon-512.png"
 }

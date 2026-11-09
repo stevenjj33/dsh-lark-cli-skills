@@ -1,4 +1,14 @@
+<p align="center">
+  <img src="./assets/icon-512.png" alt="dsh-lark-cli-skills 图标" width="128" height="128">
+</p>
+
 # dsh-lark-cli-skills
+
+[![npm](https://img.shields.io/npm/v/dsh-lark-cli-skills)](https://www.npmjs.com/package/dsh-lark-cli-skills)
+[![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
+[![dsh plugin](https://img.shields.io/badge/dsh-plugin-8A2BE2)](https://github.com/topics/dsh-plugin)
+
+> 一个 **DeepSeek Harness 插件**，把 [飞书/Lark CLI](https://github.com/larksuite/cli) 的 agent 技能带入 DSH 的技能目录。
 
 把 [lark-cli](https://github.com/larksuite/cli) 的 **agent skills** 打包成 DeepSeek Harness 插件。
 
