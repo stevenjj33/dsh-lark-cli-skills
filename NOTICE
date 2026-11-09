@@ -1,0 +1,33 @@
+dsh-lark-cli-skills
+===================
+
+This package redistributes agent skill documentation that originates from the
+Lark/Feishu CLI project.
+
+Upstream project
+----------------
+  Package : @larksuite/cli
+  Repo    : https://github.com/larksuite/cli
+  License : MIT
+  Copyright (c) Lark Technologies / Feishu
+
+The files under skills/ are exported verbatim from the lark-cli binary via
+`lark-cli skills list` and `lark-cli skills read`. Their wording, structure and
+examples belong to the upstream project. This repository only:
+
+  - materialises them as files on disk,
+  - registers them with the DeepSeek Harness skill registry, and
+  - ships them alongside the plugin glue code.
+
+No upstream skill text is edited, and no authorship of that text is claimed.
+
+Bundled plugin code
+-------------------
+Everything outside skills/ — lib/, scripts/, cordis.patch.yml, package.json —
+is original work of this repository and is licensed MIT.
+
+Trademarks
+----------
+"Lark" and "Feishu" are trademarks of their respective owners. This package is
+an unofficial integration and is not endorsed by or affiliated with Lark/Feishu
+or with DeepSeek.

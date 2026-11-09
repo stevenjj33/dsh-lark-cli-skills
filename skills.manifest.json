@@ -1,0 +1,118 @@
+{
+  "larkCliVersion": "lark-cli version 1.0.99",
+  "skillCount": 27,
+  "fileCount": 412,
+  "excluded": [
+    "lark-im"
+  ],
+  "skills": [
+    {
+      "name": "lark-approval",
+      "files": 17
+    },
+    {
+      "name": "lark-apps",
+      "files": 33
+    },
+    {
+      "name": "lark-attendance",
+      "files": 1
+    },
+    {
+      "name": "lark-base",
+      "files": 27
+    },
+    {
+      "name": "lark-calendar",
+      "files": 15
+    },
+    {
+      "name": "lark-contact",
+      "files": 4
+    },
+    {
+      "name": "lark-doc",
+      "files": 16
+    },
+    {
+      "name": "lark-drive",
+      "files": 61
+    },
+    {
+      "name": "lark-event",
+      "files": 9
+    },
+    {
+      "name": "lark-mail",
+      "files": 31
+    },
+    {
+      "name": "lark-markdown",
+      "files": 6
+    },
+    {
+      "name": "lark-meeting",
+      "files": 30
+    },
+    {
+      "name": "lark-minutes",
+      "files": 1
+    },
+    {
+      "name": "lark-note",
+      "files": 1
+    },
+    {
+      "name": "lark-okr",
+      "files": 26
+    },
+    {
+      "name": "lark-openapi-explorer",
+      "files": 1
+    },
+    {
+      "name": "lark-shared",
+      "files": 7
+    },
+    {
+      "name": "lark-sheets",
+      "files": 21
+    },
+    {
+      "name": "lark-skill-maker",
+      "files": 1
+    },
+    {
+      "name": "lark-slides",
+      "files": 43
+    },
+    {
+      "name": "lark-task",
+      "files": 19
+    },
+    {
+      "name": "lark-vc",
+      "files": 1
+    },
+    {
+      "name": "lark-vc-agent",
+      "files": 1
+    },
+    {
+      "name": "lark-whiteboard",
+      "files": 24
+    },
+    {
+      "name": "lark-wiki",
+      "files": 14
+    },
+    {
+      "name": "lark-workflow-meeting-summary",
+      "files": 1
+    },
+    {
+      "name": "lark-workflow-standup-report",
+      "files": 1
+    }
+  ]
+}
