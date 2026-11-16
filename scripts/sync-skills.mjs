@@ -7,7 +7,7 @@
  * contents therefore always match whatever \`lark-cli\` version is installed.
  *
  * Usage:
- *   node scripts/sync-skills.mjs              # sync all skills except EXCLUDED
+ *   node scripts/sync-skills.mjs              # sync the complete skill tree
  *   node scripts/sync-skills.mjs --dry-run    # list what would be written
  *   node scripts/sync-skills.mjs --check      # exit 1 if the local copy is stale
  *
@@ -24,48 +24,18 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SKILLS_DIR = join(ROOT, 'skills');
 const MANIFEST = join(ROOT, 'skills.manifest.json');
 
-/** Skills deliberately left out of this package. */
-const EXCLUDED = new Set([
-  // lark-im is intentionally omitted: this package complements an IM bridge
-  // (e.g. @xmanrui/dsh-im) rather than duplicating it. See README.
-  'lark-im',
-]);
-
 /**
- * Text substitutions applied to every exported file.
+ * This package ships the COMPLETE lark-cli skill tree — no skill is excluded.
  *
- * Skills link to each other as `../<skill>/SKILL.md`. When a linked skill is
- * excluded from this package, that link would 404 for the reader. Each rule
- * below replaces a dangling link with an inline note naming the CLI command
- * that still serves it, so the surrounding prose keeps reading correctly.
+ * Earlier revisions omitted `lark-im` to avoid overlapping an IM bridge plugin.
+ * That exclusion is gone: the goal is a verbatim mirror of the upstream CLI so
+ * that every skill referenced by any other skill resolves on disk. Cross-skill
+ * links (`../<skill>/SKILL.md`) therefore all work without rewriting.
+ *
+ * Upstream: https://github.com/larksuite/cli
  */
-const LINK_REWRITES = [
-  {
-    // lark-im is excluded on purpose (see EXCLUDED above).
-    pattern: /\[lark-im\]\(\.\.\/lark-im\/SKILL\.md\)/g,
-    replace: 'lark-im (not bundled here — read it with `lark-cli skills read lark-im`)',
-  },
-  {
-    pattern: /\.\.\/lark-im\/SKILL\.md/g,
-    replace: 'lark-im (not bundled here — read it with `lark-cli skills read lark-im`)',
-  },
-  // Reference-file links: [text](../../lark-im/references/x.md) and
-  // [text](../lark-im/references/x.md). Keep the label, drop the dead target.
-  {
-    pattern: /\[([^\]]+)\]\((?:[.][.]\/)+lark-im\/references\/[^)]+\)/g,
-    replace: '$1 (not bundled here — see `lark-cli skills list lark-im`)',
-  },
-  {
-    pattern: /(?:[.][.]\/)+lark-im\/references\/[^\s)\]]+/g,
-    replace: 'lark-im reference (not bundled here — see `lark-cli skills list lark-im`)',
-  },
-];
-
-/** Apply every LINK_REWRITES rule to one file's text. */
 function rewriteLinks(text) {
-  let out = text;
-  for (const rule of LINK_REWRITES) out = out.replace(rule.pattern, rule.replace);
-  return out;
+  return text;
 }
 
 const LARK = process.env.LARK_CLI || 'lark-cli';
@@ -106,11 +76,10 @@ function main() {
   const version = execFileSync(LARK, ['--version'], { encoding: 'utf8' }).trim();
   const top = larkJson(['skills', 'list']);
   const all = top.skills.map((s) => s.name);
-  const kept = all.filter((n) => !EXCLUDED.has(n));
+  const kept = all;
 
   console.log(`lark-cli: ${version}`);
-  console.log(`skills: ${all.length} total, ${kept.length} kept, ${EXCLUDED.size} excluded`);
-  console.log(`excluded: ${[...EXCLUDED].join(', ') || '(none)'}`);
+  console.log(`skills: ${all.length} total (full tree, nothing excluded)`);
 
   // --check: compare against the committed manifest instead of writing.
   if (CHECK) {
@@ -162,7 +131,7 @@ function main() {
         larkCliVersion: version,
         skillCount: kept.length,
         fileCount: written,
-        excluded: [...EXCLUDED],
+        excluded: [],
         skills: summary,
       },
       null,

@@ -260,7 +260,7 @@ lark-cli drive +list-replies \
 
 对 `event_type == "chat_received"` 的事件逐项处理 `payload.chat_received_items`：
 
-- `message_type == 3` 是会中 reaction；构造 IM `post` 内容时，以 `lark-im` reaction emoji 列表 (not bundled here — see `lark-cli skills list lark-im`) 作为 IM `emotion` 白名单。白名单内的 key 写成 `{"tag":"emotion","emoji_type":"<content>"}`，例如 `JIAYI`、`THUMBSUP`、`OK`。
+- `message_type == 3` 是会中 reaction；构造 IM `post` 内容时，以 [`lark-im` reaction emoji 列表](../../lark-im/references/lark-im-reactions.md) 作为 IM `emotion` 白名单。白名单内的 key 写成 `{"tag":"emotion","emoji_type":"<content>"}`，例如 `JIAYI`、`THUMBSUP`、`OK`。
 - 对不在 IM reaction emoji 白名单内的 reaction key，保留原始 key 但写成文本节点，例如 `{"tag":"text","text":"[<content>]"}`；不应直接写入 `emotion.emoji_type`，否则 IM 发送会失败。
 - 不要大小写归一化或猜测映射；`content` 是原始 reaction key，必须原样判断。
 - 其他聊天消息写成文本节点：`{"tag":"text","text":"<content>"}`。

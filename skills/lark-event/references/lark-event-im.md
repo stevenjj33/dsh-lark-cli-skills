@@ -19,7 +19,7 @@
 | `im.chat.member.user.added_v1` | User joined a chat (including topic chats) |
 | `im.chat.member.user.deleted_v1` | User left voluntarily **or** was removed |
 | `im.chat.member.user.withdrawn_v1` | Pending chat invite withdrawn (inviter canceled; user never actually joined) |
-| `card.action.trigger` | Interactive card callback — button click, form submit, dropdown, etc. → see `lark-im-card-action-reply.md` (not bundled here — see `lark-cli skills list lark-im`) |
+| `card.action.trigger` | Interactive card callback — button click, form submit, dropdown, etc. → see [`lark-im-card-action-reply.md`](../../lark-im/references/lark-im-card-action-reply.md) |
 
 > **Shape**: All 12 events have a V2-enveloped raw payload. `lark-cli` flattens two of them — `im.message.receive_v1` and `card.action.trigger` — so their consumed output is flat (fields at `.xxx`). The other 10 are passed through as-is; use `.event.xxx` to access their fields.
 

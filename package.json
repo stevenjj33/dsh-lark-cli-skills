@@ -1,7 +1,7 @@
 {
   "name": "dsh-lark-cli-skills",
-  "version": "0.2.1",
-  "description": "Agent skills for the Lark/Feishu CLI (lark-cli), packaged as a DeepSeek Harness plugin bundle. Provides 27 lark-cli skills (docs, sheets, base, calendar, drive, task, wiki, approval, mail, slides, vc and more) to the DSH agent. Intentionally excludes lark-im so it complements — rather than duplicates — an existing IM bridge plugin.",
+  "version": "0.3.0",
+  "description": "Agent skills for the Lark/Feishu CLI (lark-cli), packaged as a DeepSeek Harness plugin bundle. Mirrors the complete skill tree embedded in the lark-cli binary — all 25 skills, nothing excluded — covering Messenger, docs, sheets, base, calendar, drive, task, wiki, approval, mail, slides, meetings, minutes and more. Cross-skill links resolve as shipped upstream. Requires lark-cli to be installed separately.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {

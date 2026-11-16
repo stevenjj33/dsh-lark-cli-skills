@@ -12,15 +12,11 @@
 
 把 [lark-cli](https://github.com/larksuite/cli) 的 **agent skills** 打包成 DeepSeek Harness 插件。
 
-安装后，DSH agent 就能直接查阅并使用 27 个飞书/Lark 技能——文档、多维表格、日历、云空间、任务、知识库、审批、邮箱、幻灯片、会议等。
+安装后，DSH agent 就能直接查阅并使用 **全部 25 个** 飞书/Lark 技能——即时通讯、文档、多维表格、电子表格、日历、云空间、任务、知识库、审批、邮箱、幻灯片、会议、妙记等。
 
-## 为什么不包含 lark-im
+## 全量镜像，不做排除
 
-本包**刻意排除** `lark-im`（即时通讯）技能。
-
-原因：IM 通道通常由专门的桥接插件负责（例如 `@xmanrui/dsh-im`）。两者同时提供会造成功能重叠与指令冲突，所以这里只补充**非 IM** 的飞书能力，与 IM 插件**互补**而非重复。
-
-如果你确实需要 lark-im 技能，直接从 `lark-cli skills read lark-im` 读取即可，或修改 `scripts/sync-skills.mjs` 里的 `EXCLUDED` 集合后重新同步。
+本包包含 CLI 内嵌的**全部**技能。早期版本曾排除 `lark-im` 以避免与独立 IM 桥接插件重叠；该排除已取消，现在是对 [`larksuite/cli`](https://github.com/larksuite/cli) 的逐字镜像，所有技能间链接均按上游发布状态生效。
 
 ## 前置条件
 
@@ -41,11 +37,12 @@ dsh plugin --profile <your-profile> add dsh-lark-cli-skills
 
 安装后重启 DSH，agent 的 skill catalog 里会出现 `lark-doc`、`lark-sheets`、`lark-base` 等技能。
 
-## 包含的技能（27 个）
+## 包含的技能（25 个）
 
 | 技能 | 用途 |
 | --- | --- |
 | `lark-shared` | 认证、身份切换、权限处理（**其他技能都依赖它**） |
+| `lark-im` | 即时通讯：收发消息、管理群聊、搜索记录、交互卡片 |
 | `lark-doc` | 飞书文档读写 |
 | `lark-sheets` | 电子表格 |
 | `lark-base` | 多维表格 |
@@ -56,8 +53,7 @@ dsh plugin --profile <your-profile> add dsh-lark-cli-skills
 | `lark-approval` | 审批 |
 | `lark-mail` | 邮箱 |
 | `lark-slides` | 幻灯片 |
-| `lark-vc` / `lark-vc-agent` | 视频会议 |
-| `lark-minutes` / `lark-meeting` / `lark-note` | 妙记与会议纪要 |
+| `lark-meeting` / `lark-note` | 会议与会议纪要 |
 | `lark-whiteboard` | 白板 |
 | `lark-okr` | OKR |
 | `lark-contact` | 通讯录 |

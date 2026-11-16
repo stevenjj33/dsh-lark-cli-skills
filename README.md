@@ -12,17 +12,13 @@
 
 [Agent skills](https://github.com/larksuite/cli) for the Lark/Feishu CLI, packaged as a **DeepSeek Harness** plugin bundle.
 
-Once installed, the DSH agent can consult and use 27 Lark/Feishu skills — docs, Base, calendar, drive, tasks, wiki, approval, mail, slides, meetings, and more.
+Once installed, the DSH agent can consult and use **all 25** Lark/Feishu skills embedded in the CLI — Messenger, docs, Base, sheets, calendar, drive, tasks, wiki, approval, mail, slides, meetings, minutes, and more.
 
 [中文文档](./README.zh.md)
 
-## Why lark-im is excluded
+## Complete mirror, nothing excluded
 
-This package **deliberately omits** the `lark-im` (instant messaging) skill.
-
-IM channels are normally handled by a dedicated bridge plugin (for example `@xmanrui/dsh-im`). Shipping both would overlap and risk conflicting instructions, so this package covers only **non-IM** Lark capabilities — it **complements** an IM bridge instead of duplicating it.
-
-If you do want `lark-im`, read it directly with `lark-cli skills read lark-im`, or remove it from the `EXCLUDED` set in `scripts/sync-skills.mjs` and re-sync.
+This package ships **every** skill the CLI embeds. Earlier releases omitted `lark-im` to avoid overlapping a separate IM bridge; that exclusion is gone, so the bundle is now a verbatim mirror of [`larksuite/cli`](https://github.com/larksuite/cli) and all inter-skill links work as published.
 
 ## Prerequisite
 
@@ -43,9 +39,11 @@ dsh plugin --profile <your-profile> add dsh-lark-cli-skills
 
 Restart DSH afterwards; the skills appear in the agent's catalog.
 
-## Included skills (27)
+## Included skills (25)
 
-`lark-shared` (auth — required by all others), `lark-doc`, `lark-sheets`, `lark-base`, `lark-calendar`, `lark-drive`, `lark-wiki`, `lark-task`, `lark-approval`, `lark-mail`, `lark-slides`, `lark-vc`, `lark-vc-agent`, `lark-minutes`, `lark-meeting`, `lark-note`, `lark-whiteboard`, `lark-okr`, `lark-contact`, `lark-attendance`, `lark-markdown`, `lark-event`, `lark-apps`, `lark-openapi-explorer`, `lark-skill-maker`, `lark-workflow-meeting-summary`, `lark-workflow-standup-report`.
+`lark-shared` (auth — required by all others), `lark-im`, `lark-doc`, `lark-sheets`, `lark-base`, `lark-calendar`, `lark-drive`, `lark-wiki`, `lark-task`, `lark-approval`, `lark-mail`, `lark-slides`, `lark-meeting`, `lark-note`, `lark-whiteboard`, `lark-okr`, `lark-contact`, `lark-attendance`, `lark-markdown`, `lark-event`, `lark-apps`, `lark-openapi-explorer`, `lark-skill-maker`, `lark-workflow-meeting-summary`, `lark-workflow-standup-report`.
+
+The list is a **complete mirror** of what the installed CLI ships — nothing is filtered out, so every cross-skill link (`../<skill>/SKILL.md`) resolves.
 
 ## Updating the skill text
 

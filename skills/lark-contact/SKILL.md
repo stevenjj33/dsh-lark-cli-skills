@@ -20,7 +20,7 @@ metadata:
 | 查看自己 | `+get-user` 或 `+search-user --user-ids me` | 不支持 |
 | 查同事的个人状态 / 签名 | `user_profiles batch_query` | 不支持 |
 
-已知 open_id 只是想发消息 / 排日程,不必经过 contact —— 直接 [`lark-im`](lark-im (not bundled here — read it with `lark-cli skills read lark-im`)) / [`lark-calendar`](../lark-calendar/SKILL.md)。
+已知 open_id 只是想发消息 / 排日程,不必经过 contact —— 直接 [`lark-im`](../lark-im/SKILL.md) / [`lark-calendar`](../lark-calendar/SKILL.md)。
 
 ### 名字没说清是人还是机器人 / 智能体
 
@@ -66,6 +66,6 @@ lark-cli contact +search-bot --queries '会议助手,日报助手,审批助手' 
 
 ## 不在本 skill 范围
 
-- 发消息 / 查聊天记录 → [`lark-im`](lark-im (not bundled here — read it with `lark-cli skills read lark-im`))
+- 发消息 / 查聊天记录 → [`lark-im`](../lark-im/SKILL.md)
 - 排日程 / 邀请会议 → [`lark-calendar`](../lark-calendar/SKILL.md)
 - 部门树 / 按部门列员工 / 组织架构 → [`lark-openapi-explorer`](../lark-openapi-explorer/SKILL.md) 查找原生接口

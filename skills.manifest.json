@@ -1,10 +1,8 @@
 {
   "larkCliVersion": "lark-cli version 1.0.100",
-  "skillCount": 24,
-  "fileCount": 409,
-  "excluded": [
-    "lark-im"
-  ],
+  "skillCount": 25,
+  "fileCount": 470,
+  "excluded": [],
   "skills": [
     {
       "name": "lark-approval",
@@ -41,6 +39,10 @@
     {
       "name": "lark-event",
       "files": 9
+    },
+    {
+      "name": "lark-im",
+      "files": 61
     },
     {
       "name": "lark-mail",
