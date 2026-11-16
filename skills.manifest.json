@@ -1,7 +1,7 @@
 {
-  "larkCliVersion": "lark-cli version 1.0.99",
-  "skillCount": 27,
-  "fileCount": 412,
+  "larkCliVersion": "lark-cli version 1.0.100",
+  "skillCount": 24,
+  "fileCount": 409,
   "excluded": [
     "lark-im"
   ],
@@ -55,10 +55,6 @@
       "files": 30
     },
     {
-      "name": "lark-minutes",
-      "files": 1
-    },
-    {
       "name": "lark-note",
       "files": 1
     },
@@ -89,14 +85,6 @@
     {
       "name": "lark-task",
       "files": 19
-    },
-    {
-      "name": "lark-vc",
-      "files": 1
-    },
-    {
-      "name": "lark-vc-agent",
-      "files": 1
     },
     {
       "name": "lark-whiteboard",
