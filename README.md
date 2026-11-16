@@ -18,7 +18,7 @@ Once installed, the DSH agent can consult and use **all 25** Lark/Feishu skills 
 
 ## Complete mirror, nothing excluded
 
-This package ships **every** skill the CLI embeds. Earlier releases omitted `lark-im` to avoid overlapping a separate IM bridge; that exclusion is gone, so the bundle is now a verbatim mirror of [`larksuite/cli`](https://github.com/larksuite/cli) and all inter-skill links work as published.
+This package ships **every** skill the CLI embeds — a verbatim mirror of [`larksuite/cli`](https://github.com/larksuite/cli). Nothing is filtered out, so all inter-skill links work exactly as published upstream.
 
 ## Prerequisite
 

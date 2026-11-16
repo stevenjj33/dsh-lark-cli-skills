@@ -16,7 +16,7 @@
 
 ## 全量镜像，不做排除
 
-本包包含 CLI 内嵌的**全部**技能。早期版本曾排除 `lark-im` 以避免与独立 IM 桥接插件重叠；该排除已取消，现在是对 [`larksuite/cli`](https://github.com/larksuite/cli) 的逐字镜像，所有技能间链接均按上游发布状态生效。
+本包包含 CLI 内嵌的**全部**技能，是对 [`larksuite/cli`](https://github.com/larksuite/cli) 的逐字镜像。不做任何过滤，所有技能间链接均与上游发布状态完全一致。
 
 ## 前置条件
 
